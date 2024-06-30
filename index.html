@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">Your Store</a>
+            <ul>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <style>
+            body {
+              margin: 0;
+              font-family: sans-serif;
+            }
+            header {
+              background-color: #fff;
+              padding: 20px 0;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              position: relative;
+            }
+            .logo-container {
+              position: relative;
+              width: 180px;
+              height: 160px;
+              margin: 0 auto; /* Center the logo container */
+              overflow: hidden;
+            }
+            .logo {
+              position: absolute;
+              width: 80%;
+              height: 80%;
+              transition: transform 0.5s ease; /* Smooth transition for animation */
+            }
+            .logo.active {
+              transform: scale(1.2); /* Scale up the logo when active */
+            }
+            .logo img {
+              width: 100%;
+              height: auto;
+            }
+            .slider {
+              position: absolute;
+              bottom: 20px;
+              left: 50%;
+              transform: translateX(-50%);
+              width: 100px;
+              display: flex;
+              justify-content: space-between;
+            }
+            .slider button {
+              background-color: #eee;
+              border: none;
+              border-radius: 50%;
+              width: 20px;
+              height: 20px;
+              cursor: pointer;
+            }
+          </style>
+        </head>
+        <body>
+          <header>
+            <div class="logo-container">
+              <div class="logo active">
+                <img src="your-logo.png" alt="Your Logo">
+              </div>
+            </div>
+            <div class="slider">
+              <button id="prevBtn">&#10094;</button>
+              <button id="nextBtn">&#10095;</button>
+            </div>
+          </header>
+          <script>
+            const logo = document.querySelector('.logo');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            let currentLogoIndex = 0;
+            const logoImages = [
+              'your-logo.png',
+              'your-logo-2.png',
+              'your-logo-3.png' // Add more logo image paths here
+            ];
+            function updateLogo() {
+              logo.style.backgroundImage = `url(${logoImages[currentLogoIndex]})`;
+            }
+            function nextLogo() {
+              currentLogoIndex = (currentLogoIndex + 1) % logoImages.length;
+              updateLogo();
+            }
+            function prevLogo() {
+              currentLogoIndex = (currentLogoIndex - 1 + logoImages.length) % logoImages.length;
+              updateLogo();
+            }
+            nextBtn.addEventListener('click', nextLogo);
+            prevBtn.addEventListener('click', prevLogo);
+            // Auto-slide (optional)
+            setInterval(nextLogo, 3000); // Change the interval time in milliseconds
+          </script>
+        </body>
+        <section id="products">
+            <aside id="cart">
+                <h2>Your Cart</h2>
+                <div class="cart-items">
+                    <!-- Cart items will be added here -->
+                </div>
+                <div class="cart-total">
+                    Total: $<span id="cart-total-price">0.00</span>
+                </div>
+                <button id="checkout-button">Checkout</button>
+            </aside>
+            <script src="script.js"></script>
+            <h2>Our Products</h2>
+            <div class="product-container">
+                <div class="product-item">
+                    <img src="images/product1.jpg" alt="Product 1">
+                    <h3>Product Name 1</h3>
+                    <p>Short description of product 1.</p>
+                </div>
+                <div class="product-item">
+                    <img src="images/product2.jpg" alt="Product 2">
+                    <h3>Product Name 2</h3>
+                    <p>Short description of product 2.</p>
+                </section><title>Login Page</title>
+                <style>
+                  body {
+                    font-family: sans-serif;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    min-height: 100vh;
+                    background-color: #f4f4f4;
+                  }
+                  .container {
+                    background-color: #fff;
+                    padding: 40px;
+                    border-radius: 5px;
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                    width: 350px;
+                  }
+                  h2 {
+                    text-align: center;
+                    margin-bottom: 20px;
+                  }
+                  input[type="text"],
+                  input[type="password"] {
+                    width: 100%;
+                    padding: 15px;
+                    margin: 10px 0;
+                    border: 1px solid #ddd;
+                    border-radius: 4px;
+                    box-sizing: border-box;
+                  }
+                  input[type="submit"] {
+                    background-color: #4CAF50;
+                    color: white;
+                    padding: 15px 20px;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    width: 100%;
+                  }
+                  input[type="submit"]:hover {
+                    background-color: #45a049;
+                  }
+                  .forgot-password {
+                    text-align: right;
+                    margin-bottom: 15px;
+                  }
+                  .forgot-password a {
+                    color: #333;
+                    text-decoration: none;
+                  }
+                  .forgot-password a:hover {
+                    text-decoration: underline;
+                  }
+                </style>
+                </head>
+                <body>
+                <div class="container">
+                  <h2>Login</h2>
+                  <form>
+                    <input type="text" placeholder="Username" required>
+                    <input type="password" placeholder="Password" required>
+                    <input type="submit" value="Login">
+                    <div class="forgot-password">
+                      <a href="#">Forgot password?</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>
+                This is where you would add your company's story, mission, and values.
+            </p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email"></label>
+                <input type="text" id="email" email="email" required>
+</form>
+
+  </form>
+</div>
+</main>
+</body>
+</html>
